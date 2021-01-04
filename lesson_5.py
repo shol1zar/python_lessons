@@ -17,15 +17,7 @@ s = name + " " + surname + " "
 check = os.listdir("lesson_5_2/")
 for i in check:
     if i in file:
-        print(i, "уже существует вы хотите перезаписать?")
-        answer = input("Да / Нет:  ")
-        if answer == "Да".lower():
-            f = open(file, 'w')
-            f.write(s)
-            f.close()
-        elif answer == "Нет".lower():
-            f = open(file)
-            f.close()
+        print(i, "уже существует и будет перезаписан")
 
 f = open(file, 'w')
 f.write(s)
@@ -64,7 +56,13 @@ while True:
         surname = input("Введите вашу фамилию: ")
         file = "lesson_5_2/" + name + ".txt"
         s2 = name + " " + surname + " "
-        f = open(file, 'w')
+
+        check = os.listdir("lesson_5_2/")
+        for i in check:
+            if i in file:
+                print(i, "уже существует и будет перезаписан")
+
+        f = open(file, "w")
         f.write(s2)
         f.close()
 

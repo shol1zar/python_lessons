@@ -1,19 +1,15 @@
 data = list()
 
 
-def my_function():
-    diction = {
-        "brand": car,
-        "model": model,
-        "year": year
-    }
-    data.append(diction)
+def my_func(**kwargs):
+    data.append(kwargs)
 
 
 while len(data) < 3:
-    car = input("Введите марку машины: ")
-    model = input("Введите модель: ")
-    year = input("Введите год выпуска: ")
+    my_func(
+            car=input("Введите марку машины: "),
+            model=input("Введите модель: "),
+            year=input("Введите год выпуска: ")
+            )
 
-    my_function()
 print(data)

@@ -14,10 +14,14 @@ file = "lesson_5_2/" + name + ".txt"
 s = name + " " + surname + " "
 
 
-check = os.listdir("lesson_5_2/")
-for i in check:
-    if i in file:
-        print(i, "уже существует и будет перезаписан")
+def check_box():
+    check = os.listdir("lesson_5_2/")
+    for i in check:
+        if i in file:
+            print(i, "уже существует и будет перезаписан!")
+
+
+check_box()
 
 f = open(file, 'w')
 f.write(s)
@@ -57,10 +61,7 @@ while True:
         file = "lesson_5_2/" + name + ".txt"
         s2 = name + " " + surname + " "
 
-        check = os.listdir("lesson_5_2/")
-        for i in check:
-            if i in file:
-                print(i, "уже существует и будет перезаписан")
+        check_box()
 
         f = open(file, "w")
         f.write(s2)
